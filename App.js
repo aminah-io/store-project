@@ -15,9 +15,15 @@ import {
 
 import ProductsNavigator from '../navigation/ProductsNavigator';
 
-//import the reducer file
+import productsReducer from './store/reducers/products';
 
 enableScreens();
+
+const rootReducer = combineReducers({
+  products: productsReducer
+});
+
+const store = createStore(rootReducer);
 
 export default function App() {
   let [fontsLoaded] = useFonts({
